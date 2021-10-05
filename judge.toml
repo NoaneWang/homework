@@ -3,5 +3,5 @@
 image = { source = "dockerfile", path = "." }
 
 run = [
-  "./lexer $input"
+  "cat $input | ./lexer"
 ]
