@@ -100,6 +100,7 @@ int main() {
             }
             if (!printChar(c))
                 printf("Err\n");
+            break;
         }
     }
     return 0;
