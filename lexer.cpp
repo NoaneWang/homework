@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdio>
+#define MAX 1024
 int printToken(char *s){
     if(strcmp(s, "if")==0) {printf("If\n");return 1;}
     if(strcmp(s,"else")==0) {printf("Else\n");return 1;}
@@ -58,33 +59,33 @@ int main() {
             } else if (isalpha(c) || c == '_') {
                 if (strlen(num) != 0) {
                     printf("Number(%s)\n", num);
-                    memset(num, 0, sizeof(num));
+                    memset(num, 0, MAX);
                 }
                 s[strlen(s)] = c;
                 s[strlen(s) + 1] = '\0';
             } else if (c == ' ') {
                 if (strlen(num) > 0) {
                     printf("Number(%s)\n", num);
-                    memset(num, 0, sizeof(num));
+                    memset(num, 0, MAX);
                 } else if (strlen(s) > 0) {
                     printToken(s);
-                    memset(s, 0, sizeof(s));
+                    memset(s, 0, MAX);
                 }
             } else if (c == '\n' || c == '\t') {
                 if (strlen(num) > 0) {
                     printf("Number(%s)\n", num);
-                    memset(num, 0, sizeof(num));
+                    memset(num, 0, MAX);
                 } else if (strlen(s) > 0) {
                     printToken(s);
-                    memset(s, 0, sizeof(s));
+                    memset(s, 0, MAX);
                 }
             } else {
                 if (strlen(num) > 0) {
                     printf("Number(%s)\n", num);
-                    memset(num, 0, sizeof(num));
+                    memset(num, 0, MAX);
                 } else if (strlen(s) > 0) {
                     printToken(s);
-                    memset(s, 0, sizeof(s));
+                    memset(s, 0, MAX);
                 }
                 if (printChar(c))
                     continue;
