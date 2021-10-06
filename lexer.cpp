@@ -6,7 +6,7 @@ int printToken(char *s){
     if(strcmp(s, "if")==0) {printf("If\n");return 1;}
     if(strcmp(s,"else")==0) {printf("Else\n");return 1;}
     if(strcmp(s,"while")==0) {printf("While\n");return 1;}
-    if(strcmp(s,"continue")==0) {printf("return\n");return 1;}
+    if(strcmp(s,"continue")==0) {printf("Continue\n");return 1;}
     if(strcmp(s,"break")==0) {printf("Break\n");return 1;}
     if(strcmp(s, "return")==0) {printf("Return\n"); return 1;}
     else printf("Ident(%s)\n",s);
@@ -35,6 +35,13 @@ int main() {
     num = (char*)malloc(sizeof(char)*1024);
     while((c = getchar()) != EOF){
         if(c=='='){
+            if (strlen(num) > 0) {
+                printf("Number(%s)\n", num);
+                memset(num, 0, MAX);
+            } else if (strlen(s) > 0) {
+                printToken(s);
+                memset(s, 0, MAX);
+            }
             int eq = 1;
             while((c=getchar())=='='){
                 eq++;
