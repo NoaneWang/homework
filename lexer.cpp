@@ -98,9 +98,10 @@ int main() {
                 printToken(s);
                 memset(s, 0, MAX);
             }
-            if (!printChar(c))
+            if (!printChar(c)) {
                 printf("Err\n");
-            break;
+                break;
+            }
         }
     }
     return 0;
