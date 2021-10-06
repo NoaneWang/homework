@@ -87,7 +87,10 @@ int main() {
                 printToken(s);
                 memset(s, 0, MAX);
             }
-        } else {
+        } else if(c==EOF){
+            break;
+        }
+        else {
             if (strlen(num) > 0) {
                 printf("Number(%s)\n", num);
                 memset(num, 0, MAX);
