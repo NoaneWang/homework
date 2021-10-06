@@ -27,7 +27,7 @@ int printChar(char q){
 }
 int main() {
     char c;
-    char* num;
+    char *num;
     char *s;
     s=(char*)malloc(sizeof(char)*1024);
     num = (char*)malloc(sizeof(char)*1024);
@@ -55,7 +55,7 @@ int main() {
                     s[strlen(s)] = c;
                     s[strlen(s) + 1] = '\0';
                 }
-            } else if (isalpha(c) | c == '_') {
+            } else if (isalpha(c) || c == '_') {
                 if (strlen(num) != 0) {
                     printf("Number(%s)\n", num);
                     memset(num, 0, sizeof(num));
@@ -70,7 +70,7 @@ int main() {
                     printToken(s);
                     memset(s, 0, sizeof(s));
                 }
-            } else if (c == '\n' | c == '\t') {
+            } else if (c == '\n' || c == '\t') {
                 if (strlen(num) > 0) {
                     printf("Number(%s)\n", num);
                     memset(num, 0, sizeof(num));
