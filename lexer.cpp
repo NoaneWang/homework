@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdio>
+#include <cstring>
 #define MAX 1024
 int printToken(char *s){
     if(strcmp(s, "if")==0) {printf("If\n");return 1;}
