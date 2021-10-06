@@ -95,12 +95,8 @@ int main() {
                 printToken(s);
                 memset(s, 0, MAX);
             }
-            if (printChar(c))
-                continue;
-            else {
+            if (!printChar(c))
                 printf("Err\n");
-                break;
-            }
         }
     }
     return 0;
