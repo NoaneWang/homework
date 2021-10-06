@@ -55,56 +55,53 @@ int main() {
             }
             eq = 0;
         }
-        else {
-            if (isdigit(c)) {
-                if (strlen(s) == 0) {
-                    num[strlen(num)] = c;
-                    num[strlen(num) + 1] = '\0';
-                } else {
-                    s[strlen(s)] = c;
-                    s[strlen(s) + 1] = '\0';
-                }
-            } else if (isalpha(c) || c == '_') {
-                if (strlen(num) != 0) {
-                    printf("Number(%s)\n", num);
-                    memset(num, 0, MAX);
-                }
+        if (isdigit(c)) {
+            if (strlen(s) == 0) {
+                num[strlen(num)] = c;
+                num[strlen(num) + 1] = '\0';
+            } else {
                 s[strlen(s)] = c;
                 s[strlen(s) + 1] = '\0';
-            } else if (c == ' ') {
-                if (strlen(num) > 0) {
-                    printf("Number(%s)\n", num);
-                    memset(num, 0, MAX);
-                } else if (strlen(s) > 0) {
-                    printToken(s);
-                    memset(s, 0, MAX);
-                }
-            } else if (c == '\n' || c == '\t') {
-                if (strlen(num) > 0) {
-                    printf("Number(%s)\n", num);
-                    memset(num, 0, MAX);
-                } else if (strlen(s) > 0) {
-                    printToken(s);
-                    memset(s, 0, MAX);
-                }
-            } else {
-                if (strlen(num) > 0) {
-                    printf("Number(%s)\n", num);
-                    memset(num, 0, MAX);
-                } else if (strlen(s) > 0) {
-                    printToken(s);
-                    memset(s, 0, MAX);
-                }
-                if (printChar(c))
-                    continue;
-                else {
-                    printf("Err\n");
-                    break;
-                }
+            }
+        } else if (isalpha(c) || c == '_') {
+            if (strlen(num) != 0) {
+                printf("Number(%s)\n", num);
+                memset(num, 0, MAX);
+            }
+            s[strlen(s)] = c;
+            s[strlen(s) + 1] = '\0';
+        } else if (c == ' ') {
+            if (strlen(num) > 0) {
+                printf("Number(%s)\n", num);
+                memset(num, 0, MAX);
+            } else if (strlen(s) > 0) {
+                printToken(s);
+                memset(s, 0, MAX);
+            }
+        } else if (c == '\n' || c == '\t') {
+            if (strlen(num) > 0) {
+                printf("Number(%s)\n", num);
+                memset(num, 0, MAX);
+
+            } else if (strlen(s) > 0) {
+                printToken(s);
+                memset(s, 0, MAX);
+            }
+        } else {
+            if (strlen(num) > 0) {
+                printf("Number(%s)\n", num);
+                memset(num, 0, MAX);
+            } else if (strlen(s) > 0) {
+                printToken(s);
+                memset(s, 0, MAX);
+            }
+            if (printChar(c))
+                continue;
+            else {
+                printf("Err\n");
+                break;
             }
         }
-
-
     }
     return 0;
 }
